@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 20em;
+    height: 22em;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda transparente */
+  }
+
+.container h1{
+    text-align: center;
+}
+
+.input-container {
+    position: relative;
+    width: 300px;
+}
+
+.container label{
+    margin-top: .8em;
+}
+
+.inputN{
+    width: 90%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    
+}
+input:focus{
+    outline: none;
+    border-bottom-color: #007BFF;
+}
+
+.labelN{
+    color: #333;
+}
+.labelE{
+    color: #ff0000;
+}
+
+.inputE{
+    width: 90%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ff0000;
+    font-size: 16px;
+    color: #333;
+}
+
+.container button{
+    margin-top: 2em;
+    border: none;
+    height: 2.3em;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 10px;
+    transition: .3s linear;
+}
+
+.container button:hover{
+    background-color: #0550a0;
+    color: #ccc;
+}
+
+.container p {
+    color: #ff0000;
+}

@@ -34,7 +34,7 @@ function Bemvindo({id}){
     return(
         <div>
             {username && <h1>Bem vindo {username}</h1>}
-            <h2>Edite seu perfil aqui!</h2>
+            
             
         </div>
     )

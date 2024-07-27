@@ -11,6 +11,7 @@ function LoginForm({onLogin}) {
 
 function registrar (e){
   e.preventDefault()
+  
 
   fetch(`http://localhost:5000/users`, {
     method:'GET',
@@ -50,10 +51,10 @@ function registrar (e){
     <div className={styles.container}>
       <form onSubmit={registrar}>
         <h1>Login</h1>
-      <label for="name" className={labelClass}>Username:</label>
+      <label  className={labelClass}>Username:</label>
         <input type="text" className={inputClass} value={username} onChange={(e) => setUsername(e.target.value)}required placeholder='Digite seu Username'/>
-        <label for="password"  className={labelClass}>Password:</label>
-        <div className>
+        <label   className={labelClass}>Password:</label>
+        <div>
           <input type="password" className={inputClass}  value={password} onChange={(e) => setPassword(e.target.value)}required placeholder='Digite sua senha'/>
         </div>
        {message && (<p>{message}</p>)}

@@ -1,11 +1,15 @@
-import React, { useState,} from 'react';
+import React, { useState, useEffect} from 'react';
 import LoginForm from '../componentes/LoginForm';
 import RegisterForm from '../componentes/RegisterForm';
 import Bemvindo from '../pages/Bemvindo';
 import Navbar from './elementos/Navbar';
 import styles from './LogReg.module.css'
-import ButtonEdit from '../componentes/elementos/ButtonEdit';
+import ButtonEdit from './elementos/ButtonEdit';
 import EditarPerfil from'../pages/EditarPerfil'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Perfil from '../pages/Perfil';
+
+
 function LogReg() {
 
     const[logado , setLogado] = useState(false)
@@ -13,6 +17,14 @@ function LogReg() {
     const [idatualizado , setidatualizado] = useState('')
     const [editando ,setEditando] = useState(false)
 
+    useEffect(() => {
+      const logadoStatus = localStorage.getItem('logado');
+      const userIds = localStorage.getItem('userId');
+      if (logadoStatus === 'true' && userIds) {
+          setLogado(true);
+          setidatualizado(userIds);
+      }
+  }, []);
 
 const register = (userId) => {
     setLogado(true)
@@ -88,14 +100,20 @@ const handleEditButtonClick = () => {
       ) : (
         <div>
         {!editando ? (
+          <Router>
           <>
-            <Navbar sair={sair} excluir={excluir} id={idatualizado} />
-            <Bemvindo id={idatualizado} />
-            <ButtonEdit onClick={handleEditButtonClick}  text='editar perfil'/> {/* Passa a função para o botão */}
+            <Navbar sair={sair} excluir={excluir} id={idatualizado} handleEditButtonClick={handleEditButtonClick}/>
+            <Routes>
+            <Route exacth path='/' Component={Bemvindo} />
+            <Route path='/Perfil' Component={Perfil}/>
+            </Routes>
+            
+             
           </>
+          </Router>
         ) : (
           <>
-          <EditarPerfil/>
+          <EditarPerfil id={idatualizado}/>
           <ButtonEdit onClick={handleEditButtonClick}  text='voltar'/>
           </>
         )}

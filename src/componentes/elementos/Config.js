@@ -2,7 +2,7 @@ import styles from './Navbar.module.css'
 import React, { useState} from 'react';
 import { FaCog, FaTrash } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
-import ButtonEdit from '../elementos/ButtonEdit';
+import { Link } from 'react-router-dom';
 
 function Config({ sair , excluir , handleEditButtonClick}){
     const[config , setConfig] = useState(true)
@@ -22,7 +22,8 @@ function Config({ sair , excluir , handleEditButtonClick}){
             <div className={styles.configOptions}>
               <h1>CONFIGURAÇOES</h1>
               <div className={styles.botoes}>
-              <ButtonEdit onClick={handleEditButtonClick}  text='editar perfil'/>
+              <button><Link to='editarperfil'onClick={handleConfig}>EDITAR</Link></button>
+              
               <button onClick={sair}>TROCAR</button>
               <div className={styles.bot_sair_excluir}>
               <button className={styles.sair} onClick={sair}> <FiLogOut />SAIR</button>

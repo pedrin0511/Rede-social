@@ -2,34 +2,45 @@ import React, { useState, useEffect} from 'react';
 
 
 
-function Bemvindo({id}){
+function Bemvindo(){
     const [username ,setUsername] = useState('')
-    
+    const [id , setId] = useState('')
+
+    useEffect(()=>{
+        const userId = localStorage.getItem('userId');
+        if(userId){
+            setId(userId)
+        }
+    },[])
+
+
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users` , {
-            method:'GET',
-            headers:{
-                'Content-Type': 'application/json'
+        if (id) {
+          fetch(`http://localhost:5000/users`, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
             },
-        })
-        .then((resp) => {
-            if(!resp.ok){
-                throw new Error('erro')
-              }
-              return resp.json()
-        })
-        .then((data) => {
-            const user = data.find(user => user.id === id)
-            if(user){
-                setUsername(user.username)
+          })
+          .then((resp) => {
+            if (!resp.ok) {
+              throw new Error('Erro ao buscar usuários');
             }
-            
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    },[id])
+            return resp.json();
+          })
+          .then((data) => {
+            const user = data.find(user => user.id === id);
+            if (user) {
+              setUsername(user.username);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        }
+      }, [id]);
 
     return(
         <div>

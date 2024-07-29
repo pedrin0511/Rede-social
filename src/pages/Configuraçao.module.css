@@ -1,0 +1,11 @@
+.container{
+    display: grid;
+    justify-content: center;
+    
+}
+
+.container_texto{
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid ;
+}

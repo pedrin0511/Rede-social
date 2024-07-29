@@ -1,9 +1,8 @@
 import styles from './Navbar.module.css'
 import React, { useState, useEffect} from 'react';
-import Config from './Config';
 import FotoPerfil from './FotoPerfil';
 import{Link} from 'react-router-dom'
-
+import { FaHome , FaCog} from "react-icons/fa";
 function Navbar({sair , excluir , id , handleEditButtonClick}){
 
 const[username , setUsername] = useState('')
@@ -47,8 +46,20 @@ useEffect (()=> {
             
             {username && <h2>{username}</h2>}
             </div>
-            <div>
-              <Config sair={sair} excluir={excluir} handleEditButtonClick={handleEditButtonClick}/>
+            
+            
+            <div className={styles.icons}>
+
+              <div className={styles.home}><Link to='/'><FaHome/></Link></div>
+              
+              <div className={styles.home}><Link to={{
+                pathname: '/Config',
+                state: {sair, excluir}}}>
+                <FaCog/></Link></div>
+
+
+              
+              
             </div>
         </nav>
     )

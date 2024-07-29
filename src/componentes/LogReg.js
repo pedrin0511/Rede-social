@@ -6,9 +6,8 @@ import Navbar from './elementos/Navbar';
 import styles from './LogReg.module.css'
 import ButtonEdit from './elementos/ButtonEdit';
 import EditarPerfil from'../pages/EditarPerfil'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Perfil from '../pages/Perfil';
-
+import { Outlet } from 'react-router-dom';
 
 function LogReg() {
 
@@ -100,17 +99,14 @@ const handleEditButtonClick = () => {
       ) : (
         <div>
         {!editando ? (
-          <Router>
+
           <>
             <Navbar sair={sair} excluir={excluir} id={idatualizado} handleEditButtonClick={handleEditButtonClick}/>
-            <Routes>
-            <Route exacth path='/' Component={Bemvindo} />
-            <Route path='/Perfil' Component={Perfil}/>
-            </Routes>
-            
-             
+            <div>
+            <Outlet />
+            </div>
+
           </>
-          </Router>
         ) : (
           <>
           <EditarPerfil id={idatualizado}/>

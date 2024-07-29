@@ -1,11 +1,20 @@
-import { useState} from "react"
+import { useState, useEffect} from "react"
 import FotoPerfil from "../componentes/elementos/FotoPerfil"
+import { Link } from "react-router-dom";
 
-function EdtitarPerfil({id}){
+function EdtitarPerfil(){
     const[foto , setfoto] = useState('')
     const [username, setUsername] = useState('');
     const[idade,setidade] = useState('')
+    const [id , setId] = useState('')
    
+    useEffect(()=>{
+        const userId = localStorage.getItem('userId');
+        if(userId){
+            setId(userId)
+        }
+    },[])
+
     function editarNome (e){
         e.preventDefault()
 
@@ -39,6 +48,7 @@ function EdtitarPerfil({id}){
                 })
             }
         })
+        window.location.reload('./EditarPerfil.js');
     }
         
 
@@ -87,6 +97,7 @@ function EdtitarPerfil({id}){
     .then(resp => resp.json)
     .then((data) => alert('Idade atualizada'))
     .catch((error)=> alert('erro ao atualizar idade'))
+    window.location.reload('./EditarPerfil.js');
    }
 
     return(
@@ -114,7 +125,7 @@ function EdtitarPerfil({id}){
                 <input type="text" onChange={(e) => setidade(e.target.value) }/>
                 <button onClick={editarIdade}>salvar </button>
             </div>
-
+            <button><Link to='/'>Ver perfil</Link></button>
 
         </div>
     )

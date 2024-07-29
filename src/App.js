@@ -9,7 +9,8 @@ function App() {
 
  return (
   <div>
-   <LogReg/>
+   
+   <LogReg />
 </div>
  )
         

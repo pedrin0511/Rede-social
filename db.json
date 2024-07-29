@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "id": "8cc5",
-      "username": "pedro",
-      "password": "1",
-      "fotodeperfil": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiNPeu0tzpUGoEYiDsckrVBZGs_M64TQxD3Q&s",
-      "Idade": "18"
-    },
-    {
       "id": "972f",
       "username": "1",
       "password": "2",

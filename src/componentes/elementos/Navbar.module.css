@@ -28,30 +28,21 @@ color: white;
     cursor: pointer ;
 }
 
-.configOptions{
-    background-color: rgb(253, 253, 253);
-    width: 50%;
-    height: 90vh;
-    position: absolute;
-    z-index: 10;
-    right: 0;
-    text-align: center;
-    animation: fadeIn .3s ease-in-out;
-    border: 2px solid rgba(0, 153, 255, 0.87);
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-}
+
 
 .config{
     background-color: transparent;
     border: none;
     color: white;
     font-size: 2em;
-    margin-top: .5em;
+    margin-top: .2em;
     margin-right: 1em;
     cursor: pointer;
-    
+    transition: .3s linear;
+}
+
+.config:hover{
+    color: rgb(167, 167, 167);
 }
 
 .botoes{
@@ -84,11 +75,30 @@ color: white;
 .excluir{
     background-color: rgb(243, 63, 63);
     color: white;
-    transition: .5s linear;
+    transition: .3s linear;
 }
 
 .excluir:hover{
     background-color: rgb(245, 14, 14);
+}
+.icons{
+    display: flex;
+    gap: 2em;
+    margin-top: 1em;
+}
+
+
+
+.home a{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    transition: .5s linear;
+    
+}
+
+.home a:hover{
+    color: rgb(167, 167, 167);
 }
 
 @keyframes fadeIn {

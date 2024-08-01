@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    margin: 1em;
+    margin-top: 2em;
+}
+
+.img_perfil img{
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+}
+
+.bio{
+    margin-left: 2em;
+    font-size: large;
+}
+
+.seguir{
+    margin-left: 2em;
+    margin-top: 7em;
+}
+
+.seguidores{
+    margin-top: 5px;
+    margin-left: 2em;
+}

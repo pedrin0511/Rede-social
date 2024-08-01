@@ -76,6 +76,7 @@ input:focus{
     font-size: 1.2em;
     border-radius: 10px;
     transition: .3s linear;
+    text-align: center;
 }
 
 .container button:hover{

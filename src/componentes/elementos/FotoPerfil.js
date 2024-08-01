@@ -22,7 +22,7 @@ useEffect (() =>{
         const user = data.find(user => user.id === id)
         if(user){
           setfotoperfil(user.fotodeperfil)
-          console.log(user.fotodeperfil)
+          
         }
            
       })

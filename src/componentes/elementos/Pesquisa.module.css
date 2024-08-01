@@ -1,0 +1,56 @@
+.container{
+    z-index: 100;
+    width: 20em;
+    margin-top: .7em;
+}
+
+.inputN{
+    width: 90%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    font-size: 16px;
+    color: #ffffff;
+    
+}
+
+.inputN::placeholder{
+    color: #ffffff;
+}
+
+
+.inputN:focus{
+    border-bottom: 2px solid #ccc;;
+}
+
+.ul{
+    background: rgba(255, 255, 255, 0.418); /* Fundo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    width: 18em;
+    margin-top: .5em;
+}
+
+.ul li{
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-left: 1em;
+    height: 100%;
+    z-index: 100;
+    list-style: none;
+}
+
+.usuarios_lista{
+    display: flex;
+    margin-bottom: 2em;
+    gap: 2em;
+}
+
+.usuarios_lista button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}

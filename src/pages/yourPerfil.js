@@ -1,20 +1,23 @@
 import { useState , useEffect } from "react"
-import styles from './Perfil.module.css'
-import FotoPerfil from "../componentes/elementos/FotoPerfil"
+import Seguir from "../componentes/elementos/Seguir"
+import styles from './yourperfil.module.css'
 import Seguidores from "../componentes/elementos/NumeroSeguidor"
 
-function Perfil(){
+
+function YourPerfil(){
     const [username ,setUsername] = useState('')
     const [idade ,setidade] = useState('')
     const [bio ,setbio] = useState('')
     const [id , setId] = useState('')
+    const [foto , setfoto] = useState('')
     
     useEffect(()=>{
-        const userId = localStorage.getItem('userId');
-        if(userId){
-            setId(userId)
-        }
+      const setIds =  localStorage.getItem('frendid')
+      if(setIds){
+        setId(setIds)
+      }
     },[])
+    
 
 
 
@@ -39,7 +42,7 @@ function Perfil(){
               setUsername(user.username);
               setidade(user.Idade)
               setbio(user.Bio)
-             
+              setfoto(user.fotodeperfil)
             }
           })
           .catch((error) => {
@@ -49,22 +52,27 @@ function Perfil(){
       }, [id]);
 
     return (
-        <div>
-            <div className={styles.container_img}>
-               <FotoPerfil id={id}/>
-              <div>
-              <h1>{username}</h1>
-              <div className={styles.bio_idade}>
-              <p>{bio}</p>
-              <p>Idade: {idade}</p>
-              </div>
-              <Seguidores/>
+        <div className={styles.container}>
+          <div className={styles.img_perfil}>
+          <img src={foto} alt={username}/>
+          </div>
+          <div>
+          <div className={styles.bio}>
+            <h2>{username}</h2>
+            <p>{idade}</p>
+            <p>{bio}</p>
             </div>
+            <div className={styles.seguir}>
+            <Seguir/>
             </div>
+          </div>
+          <div className={styles.seguidores}>
+            <Seguidores/>
+          </div>
             
             
         </div>
     )
 }
 
-export default Perfil
+export default YourPerfil

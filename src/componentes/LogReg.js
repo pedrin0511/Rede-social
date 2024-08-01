@@ -1,12 +1,9 @@
 import React, { useState, useEffect} from 'react';
 import LoginForm from '../componentes/LoginForm';
 import RegisterForm from '../componentes/RegisterForm';
-import Bemvindo from '../pages/Bemvindo';
 import Navbar from './elementos/Navbar';
 import styles from './LogReg.module.css'
-import ButtonEdit from './elementos/ButtonEdit';
-import EditarPerfil from'../pages/EditarPerfil'
-import Perfil from '../pages/Perfil';
+
 import { Outlet } from 'react-router-dom';
 
 function LogReg() {
@@ -98,21 +95,12 @@ const handleEditButtonClick = () => {
         </>
       ) : (
         <div>
-        {!editando ? (
-
-          <>
+ 
             <Navbar sair={sair} excluir={excluir} id={idatualizado} handleEditButtonClick={handleEditButtonClick}/>
             <div>
             <Outlet />
-            </div>
-
-          </>
-        ) : (
-          <>
-          <EditarPerfil id={idatualizado}/>
-          <ButtonEdit onClick={handleEditButtonClick}  text='voltar'/>
-          </>
-        )}
+            </div> 
+     
       </div>
       )}
     </div>

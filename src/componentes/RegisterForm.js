@@ -8,7 +8,7 @@ function RegisterForm({onRegister}) {
   const [message, setMessage] = useState('');
   const [inputClass, setInputClass] = useState(styles.inputN);
   const [labelClass, setLabelClass] = useState(styles.labelN)
-
+const fotodeperfil = 'https://cdn-icons-png.flaticon.com/512/3106/3106921.png'
 
 const registrar = (e) => {
   e.preventDefault()
@@ -30,12 +30,13 @@ fetch('http://localhost:5000/users')
         setMessage('Usuário já cadastrado');
         
     }else{
+      const seguidores = ['']
         return fetch('http://localhost:5000/users',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({username,password}),
+            body: JSON.stringify({username,password , fotodeperfil , seguidores}),
         })
     }
 })

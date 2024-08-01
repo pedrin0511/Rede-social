@@ -1,11 +1,59 @@
 .container{
     display: grid;
     justify-content: center;
+    width: 100%;
+    
+    
+}
+a{
+    text-decoration: none;
+    color: black
+}
+
+.container_config{
+    margin-top: 1em;
+    border: 1px solid ;
+    background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 30em;
     
 }
 
-.container_texto{
-    margin-top: 1em;
-    padding: 1em;
-    border: 1px solid ;
+
+.container_opc button{
+    border: none;
+    cursor: pointer;
+    text-align: start;
+    height: 3em;
+    border-radius: 4px;
+    transition: .5s ease-in-out;
+    background-color: rgb(230, 230, 230);
+}
+
+.container_opc button:hover{
+    background-color: rgb(172, 172, 172);
+}
+.container_opc svg{
+    font-size: 1.5em;
+    margin-right: 1em;
+}
+
+.container_opc{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    gap: .5em;
+}
+
+.container_opc span{
+    margin-left: 1em;
+}
+.container_opc p{
+    color: rgb(112, 112, 112);
+    text-align: center;
+    
 }

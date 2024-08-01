@@ -1,7 +1,8 @@
-import {FaTrash } from 'react-icons/fa';
+import {FaTrash  ,FaUserEdit} from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 import { useState , useEffect} from 'react';
 import { useNavigate , Link } from 'react-router-dom';
+import { AiOutlineUserSwitch } from "react-icons/ai";
 import style from './Configuraçao.module.css'
 
 function Configuraçao(){
@@ -24,7 +25,7 @@ function Configuraçao(){
             
              // Recarregar a página
         }
-    }, [recarregar]);
+    });
 
     const sair = () =>{
         setLogado(false)
@@ -65,14 +66,24 @@ function Configuraçao(){
 
     return(
         <div className={style.container}>
-            {!logado ? (<></>) : (<></>)}
-            <h1>Configuraçoes</h1>
-            <div className={style.container_texto}>
-            <p>Sobre a conta</p>
-             <button ><Link to='/editarperfil'>EDITE SEU PERFIL AQUI</Link></button>
-             <div>
-                <button  onClick={sair}> <FiLogOut />SAIR</button>
-                <button  onClick={excluir}>  <FaTrash />Excluir</button>  
+            
+            <h1>Configurações</h1>
+            <div className={style.container_config}>
+
+            <Link to='/editarperfil'><div className={style.container_opc}>
+               <p>Sobre a conta</p>
+               <button ><span><FaUserEdit />EDITE SEU PERFIL AQUI</span></button> 
+               
+                <button> <span><AiOutlineUserSwitch /> TROCAR DE CONTA</span></button>
+             
+            </div>
+            </Link>
+            
+            
+             <div className={style.container_opc}>
+                <p>Opções de saida</p>
+                <button  onClick={sair}> <span><FiLogOut />SAIR AGORA</span></button>
+                <button  onClick={excluir}> <span><FaTrash />EXCLUIR CONTA</span> </button>  
              </div>
                  
             </div>

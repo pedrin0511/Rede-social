@@ -1,0 +1,189 @@
+.container{
+    display: flex;
+    color: #333;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+.borda{
+    margin-top: 2em;
+    background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    align-items: center;
+    display: flex;
+}
+
+.container_img{
+    margin: 2em;
+    
+}
+
+.container_img img{
+    border-radius: 50%;
+    margin: 1em;
+    width: 20em;
+    height: 20em;
+}
+
+.foto{
+    margin-left: 1.5em;
+}
+.url{
+    margin-left: 1.5em;
+}
+
+.url input{
+    width: 90%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    color: #333;
+}
+
+input:focus{
+    outline: none;
+    border-bottom-color: #007BFF;
+}
+.button_foto{
+    background-color: #099dff; /* Verde */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1em;
+    display: flex;
+    gap: .5em;
+}
+
+.foto button:hover{
+    background-color: #4c94e6;
+    transform: scale(1.05);
+}
+
+.url button{
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1em;
+    display: flex;
+    gap: .5em;
+}
+
+.url button:hover{
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.url button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2em;
+}
+
+.custom_textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de foco */
+.custom_textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 2px 2px 12px rgba(0, 77, 128, 0.2);
+    outline: none; /* Remove o outline padrão */
+}
+
+.custom_upload{
+    
+    height: 3em;
+    width: 15em;
+    border-bottom: 2px solid #ccc;
+    font-size: 1.2em;
+    color: #333;
+    
+}
+
+
+.label{
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    gap: 1em;
+    padding-top: 1em;
+    transition: .5s ;
+}
+
+.label svg{
+    font-size: 1.5em;
+}
+
+.label:hover{
+    color: #007BFF;
+}
+
+.inputN{
+    width: 90%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+input:focus{
+    outline: none;
+    border-bottom-color: #007BFF;
+}
+
+
+.ver_perfil{
+    margin: 1em;
+    display: flex;
+    justify-content: end;
+    transition: .3s;
+}
+
+.ver_perfil button{
+    border: none;
+    font-size: 1em;
+}
+
+.ver_perfil :hover{
+    color: #007BFF;
+}

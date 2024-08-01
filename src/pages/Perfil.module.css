@@ -1,0 +1,16 @@
+.container_img{
+    display: flex;
+    margin: 2em;
+    gap: 5em;
+}
+
+.container_img img{
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+}
+
+.bio_idade{
+    margin-top: 1em;
+    font-size: 1.4em;
+}

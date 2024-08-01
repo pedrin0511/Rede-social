@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import LogReg from './componentes/LogReg';
+
 import Perfil from './pages/Perfil';
 import Bemvindo from './pages/Bemvindo';
 import EdtitarPerfil from './pages/EditarPerfil';
 import Configuraçao from './pages/Configuraçao';
-
-
+import YourPerfil from './pages/yourPerfil'
+import Explorar from './pages/explorar'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -33,6 +33,15 @@ const router = createBrowserRouter([
       {
         path: "/Config",
         element: <Configuraçao />,
+      },
+      {
+        path: "/youPerfil",
+        element: <YourPerfil/>,
+      }
+      ,
+      {
+        path: "/explorar",
+        element: <Explorar/>,
       }
     ]
   }

@@ -3,7 +3,8 @@ import React, { useState, useEffect} from 'react';
 import FotoPerfil from './FotoPerfil';
 import{Link} from 'react-router-dom'
 import { FaHome , FaCog} from "react-icons/fa";
-function Navbar({sair , excluir , id , handleEditButtonClick}){
+import Pesquisa from './Pesquisa';
+function Navbar({sair , excluir , id }){
 
 const[username , setUsername] = useState('')
 
@@ -46,7 +47,7 @@ useEffect (()=> {
             
             {username && <h2>{username}</h2>}
             </div>
-            
+            <Pesquisa/>
             
             <div className={styles.icons}>
 
@@ -56,10 +57,6 @@ useEffect (()=> {
                 pathname: '/Config',
                 state: {sair, excluir}}}>
                 <FaCog/></Link></div>
-
-
-              
-              
             </div>
         </nav>
     )

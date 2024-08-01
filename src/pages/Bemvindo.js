@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -46,6 +47,7 @@ function Bemvindo(){
         <div>
             {username && <h1>Bem vindo {username}</h1>}
             
+            <Link to='/explorar'>explorar</Link>
             
         </div>
     )

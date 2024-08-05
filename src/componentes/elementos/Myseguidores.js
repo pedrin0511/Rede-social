@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-function Seguidores(){
+function MeuSeguidores(){
     const [id, setId] = useState('');
     
     const [numeroSeguidores, setnumeroSeguidores] = useState(0);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const setIds = localStorage.getItem('frendid');
+        const setIds = localStorage.getItem('userId');
         if (setIds) {
             setId(setIds);
         }
@@ -54,4 +54,4 @@ useEffect (()=>{
     )
 }
 
-export default Seguidores
+export default MeuSeguidores

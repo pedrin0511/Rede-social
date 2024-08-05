@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from './Pesquisa.module.css'
+
 function Pesquisa() {
   const [query, setQuery] = useState("");
   const [allUsers, setAllUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [myId, setMyId] = useState('');
+  const [loading, setLoading] = useState(true);
+
 
 const verperfil = (id) => {
    localStorage.setItem('frendid' , id)
@@ -20,29 +23,39 @@ useEffect(() => {
 }, [])
 
   useEffect(() => {
-    fetch('http://localhost:5000/users', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        const filtrar = data.filter(user => user.id !== myId)
-        setAllUsers(filtrar)
+    if(myId){
+      setLoading(true)
+      fetch('http://localhost:5000/users', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
-      .catch((error) => console.log(error));
+        .then((resp) => resp.json())
+        .then((data) => {
+          console.log(data)
+          const filtrar = data.filter(user => user.id !== myId)
+          setAllUsers(filtrar)
+        })
+        .catch((error) => console.log(error));
+    }else{
+      setLoading(true)
+    }
+    
   }, [myId]);
 
   useEffect(() => {
     if (query.length > 0) {
       const filtro = allUsers.filter((user) =>
         user.username.toLowerCase().includes(query.toLowerCase())
-      );
+      )
+      .slice(0,5)
       setFilteredUsers(filtro);
+      
     } else {
       setFilteredUsers([]);
     }
+    
   }, [query, allUsers]);
 
   return (
@@ -56,6 +69,7 @@ useEffect(() => {
         placeholder="Search for a user..."
       />
       <ul className={styles.ul}>
+        
         {filteredUsers.map((user) => (
           <li key={user.id}>
               <div className={styles.usuarios_lista}>

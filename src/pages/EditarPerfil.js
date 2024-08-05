@@ -10,7 +10,7 @@ function EdtitarPerfil(){
     const[idade,setidade] = useState('')
     const [id , setId] = useState('')
    const[bio , setBio] = useState('')
-   const [file, setFile] = useState(null);
+   
    const [imageBase64, setImageBase64] = useState('');
 
     useEffect(()=>{

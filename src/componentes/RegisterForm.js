@@ -36,7 +36,7 @@ fetch('http://localhost:5000/users')
             headers:{
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({username,password , fotodeperfil , seguidores}),
+            body: JSON.stringify({username,password , fotodeperfil }),
         })
     }
 })

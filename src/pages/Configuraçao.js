@@ -31,6 +31,7 @@ function Configuraçao(){
         setLogado(false)
         localStorage.removeItem('logado')
         localStorage.removeItem('userId');
+        localStorage.removeItem('frendid');
         setRecarregar(true);
         
     }

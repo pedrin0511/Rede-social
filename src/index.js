@@ -11,6 +11,7 @@ import EdtitarPerfil from './pages/EditarPerfil';
 import Configuraçao from './pages/Configuraçao';
 import YourPerfil from './pages/yourPerfil'
 import Explorar from './pages/explorar'
+import Post from './pages/Post';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/explorar",
         element: <Explorar/>,
+      },
+      {
+        path: "/Post",
+        element: <Post/>
       }
     ]
   }

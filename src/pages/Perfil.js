@@ -1,8 +1,9 @@
 import { useState , useEffect } from "react"
 import styles from './Perfil.module.css'
 import FotoPerfil from "../componentes/elementos/FotoPerfil"
-import Seguidores from "../componentes/elementos/NumeroSeguidor"
-
+import {Link} from 'react-router-dom'
+import Publicaçoes from "../componentes/publicaçoes"
+import MeuSeguidores from "../componentes/elementos/Myseguidores"
 function Perfil(){
     const [username ,setUsername] = useState('')
     const [idade ,setidade] = useState('')
@@ -58,10 +59,11 @@ function Perfil(){
               <p>{bio}</p>
               <p>Idade: {idade}</p>
               </div>
-              <Seguidores/>
+              <MeuSeguidores/>
             </div>
             </div>
-            
+            <Link to='/Post'>New Post</Link>
+            <Publicaçoes/>
             
         </div>
     )

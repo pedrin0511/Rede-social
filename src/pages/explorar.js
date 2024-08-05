@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 function Explorar(){
     const [usuarios , setUsuarios] = useState([])
     const [id , setId] = useState('')
+    const [loading ,setLoading] =useState(true)
+
 
 const verperfil = (id) =>{
     localStorage.setItem('frendid' , id)
@@ -18,7 +20,9 @@ useEffect(()=>{
 
 
     useEffect(() => {
-       fetch(`http://localhost:5000/users`,{
+       if(id){
+        setLoading(true)
+        fetch(`http://localhost:5000/users`,{
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -26,23 +30,26 @@ useEffect(()=>{
        })
        .then(resp => resp.json())
        .then((data) =>{
+        console.log(data)
         const usuario_logado = data.filter(user => user.id !== id)
         setUsuarios(usuario_logado)
+        setLoading(false)
        })
-       .catch((error) => console.log(error))
+       .catch((error) => console.log(error))}
       },[id]);
 
     return (
         <div className={styles.container}>
-            {usuarios.map(usuario =>(
-                <div key={usuario.id}>
-                    <h2>{usuario.username}</h2>
-                    <p>Idade: {usuario.Idade}</p>
-                    <p>Bio: {usuario.Bio}</p>
-                    <img src={usuario.fotodeperfil} alt={usuario.username}/>
-                    <button onClick={()=> verperfil(usuario.id)}><Link to='/youPerfil'>VER PERFIL</Link></button>
-                </div>
-            ))}
+            {loading ? (<p>Loading</p>) : (
+                usuarios.map(usuario => (
+                    <div key={usuario.id}>
+                        <h2>{usuario.username}</h2>
+                        <img src={usuario.fotodeperfil} alt={usuario.username} />
+                        <button onClick={() => verperfil(usuario.id)}><Link to='/youPerfil'>VER PERFIL</Link></button>
+                    </div>
+                ))
+            )}
+            
         </div>
     )
 }

@@ -44,7 +44,7 @@ function Seguir() {
         //Obter dados do usuário
         const response = await fetch(`http://localhost:5000/users/${id}`);
         const user = await response.json();
-
+        
         //adicionar myId aos seguidores, se ainda não estiver presente
         const NovoSeguidor = Array.isArray(user.seguidores)
             ? (user.seguidores.includes(myId) 
@@ -62,6 +62,7 @@ function Seguir() {
         });
         setseguindo(true)
         window.location.reload('/yourPerfil')
+        
     };
 
 
@@ -80,6 +81,7 @@ const deixarDeSeguir = async () => {
     })
     setseguindo(false)
     window.location.reload('/yourPerfil')
+    
 }
 
   

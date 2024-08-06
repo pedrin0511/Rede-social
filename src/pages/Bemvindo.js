@@ -19,7 +19,7 @@ function Bemvindo(){
 
     useEffect(() => {
         if (id) {
-          fetch(`http://localhost:5000/users`, {
+          fetch(`https://banco-de-dados-six.vercel.app/users`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',

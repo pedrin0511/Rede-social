@@ -42,7 +42,7 @@ function Configuraçao(){
         localStorage.removeItem('userId');
       
       
-           fetch(`http://localhost:5000/users/${id}` ,{
+           fetch(`https://banco-de-dados-six.vercel.app/users/${id}` ,{
             method:'DELETE',
             headers:{
               'Content-Type': 'application/json'

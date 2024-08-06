@@ -14,7 +14,7 @@ const registrar = (e) => {
   e.preventDefault()
   
 
-fetch('http://localhost:5000/users')
+fetch('https://banco-de-dados-six.vercel.app/users')
 .then((resp) =>{
     if(!resp.ok){
         throw new Error('Erro ao buscar usuários');
@@ -31,7 +31,7 @@ fetch('http://localhost:5000/users')
         
     }else{
       const seguidores = ['']
-        return fetch('http://localhost:5000/users',{
+        return fetch('https://banco-de-dados-six.vercel.app/users',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json',

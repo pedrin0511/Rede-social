@@ -18,7 +18,7 @@ function MeuSeguidores(){
 useEffect (()=>{
     if(id){
         setLoading(true)
-        fetch(`http://localhost:5000/users/${id}` ,{
+        fetch(`https://banco-de-dados-six.vercel.app/users/${id}` ,{
         method:'GET',
         headers:{
             'Content-Type': 'application/json'

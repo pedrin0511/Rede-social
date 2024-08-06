@@ -24,7 +24,7 @@ function Seguir() {
     //verifica se esta seguindo ou não
     useEffect(() => {
         const checkSeguindo = async () => {
-            const response = await fetch(`http://localhost:5000/users/${id}`);
+            const response = await fetch(`https://banco-de-dados-six.vercel.app/users/${id}`);
             const user = await response.json();
             
             if (Array.isArray(user.seguidores) && user.seguidores.includes(myId)) {
@@ -42,7 +42,7 @@ function Seguir() {
 //função de seguir
     const seguir = async () => {
         //Obter dados do usuário
-        const response = await fetch(`http://localhost:5000/users/${id}`);
+        const response = await fetch(`https://banco-de-dados-six.vercel.app/users/${id}`);
         const user = await response.json();
         
         //adicionar myId aos seguidores, se ainda não estiver presente
@@ -53,7 +53,7 @@ function Seguir() {
             : [myId];
 
         //enviar a atualização para o backend
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://banco-de-dados-six.vercel.app/users/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,12 +67,12 @@ function Seguir() {
 
 
 const deixarDeSeguir = async () => {
-    const response = await fetch(`http://localhost:5000/users/${id}`)
+    const response = await fetch(`https://banco-de-dados-six.vercel.app/users/${id}`)
     const user = await response.json()
 
     const seguidoresAtualizados = user.seguidores.filter(seguidor => seguidor !== myId)
 
-    await fetch(`http://localhost:5000/users/${id}`, {
+    await fetch(`https://banco-de-dados-six.vercel.app/users/${id}`, {
         method: 'PATCH',
         headers:{
              'Content-Type': 'application/json'

@@ -23,7 +23,7 @@ function EdtitarPerfil(){
     function editarNome (e){
         e.preventDefault()
 
-         fetch(`http://localhost:5000/users`)
+         fetch(`https://banco-de-dados-six.vercel.app/users`)
          .then((resp) =>{
             if(!resp.ok){
                 throw new Error('Erro ao buscar usuários');
@@ -39,7 +39,7 @@ function EdtitarPerfil(){
                 alert('Usuário já cadastrado');
                 
             }else{
-                return fetch(`http://localhost:5000/users/${id}` ,{
+                return fetch(`https://banco-de-dados-six.vercel.app/users/${id}` ,{
                     method:'PATCH',
                     headers:{
                         'Content-type' : 'application/json'
@@ -63,7 +63,7 @@ function EdtitarPerfil(){
 function editarBio(e){
     e.preventDefault()
 
-    fetch(`http://localhost:5000/users/${id}`,{
+    fetch(`https://banco-de-dados-six.vercel.app/users/${id}`,{
         method: 'PATCH',
         headers:{
              'Content-Type': 'application/json'
@@ -99,7 +99,7 @@ const convert_base64 = (e)=> {
     }
 
 
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`https://banco-de-dados-six.vercel.app/users/${id}`, {
         method:'PATCH',
         headers:{
           'Content-Type': 'application/json'
@@ -121,7 +121,7 @@ const convert_base64 = (e)=> {
    function editarIdade(e){
     e.preventDefault()
 
-    fetch(`http://localhost:5000/users/${id}`,{
+    fetch(`https://banco-de-dados-six.vercel.app/users/${id}`,{
         method:'PATCH',
         headers:{
             'Content-Type': 'application/json'

@@ -52,7 +52,7 @@ const excluir = () => {
   localStorage.removeItem('userId');
 
 
-     fetch(`http://localhost:5000/users/${idatualizado}` ,{
+     fetch(`https://banco-de-dados-six.vercel.app/users/${idatualizado}` ,{
       method:'DELETE',
       headers:{
         'Content-Type': 'application/json'

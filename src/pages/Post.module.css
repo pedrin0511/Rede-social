@@ -1,0 +1,117 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    
+   
+}
+
+.container_post{
+    background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 30em;
+    width: 40em;
+    gap: 1em;
+}
+
+.escolher_foto{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1em;
+    color: white;
+}
+
+.label{
+    background-color: #099dff;
+    width: 9em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: .3s;
+    border-radius: 10px;
+
+}
+
+.label:hover{
+        background-color: rgb(3, 89, 170);
+        transform: scale(1.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.171);
+}
+
+.escolher_foto label{
+    cursor: pointer;
+
+}
+
+.foto img{
+    width: 10em;
+    margin-top: 1em;
+    
+}
+
+.postar{
+    text-align: center;
+}
+
+.container_foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.postar img{
+    width: 15em;
+    border-radius: 4px;
+    margin-top: 1em;
+}
+
+.container_foto input{
+    width: 90%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    margin-top: 1em;
+}
+.container_foto input:focus{
+    outline: none;
+    border-bottom-color: #007BFF;
+}
+
+.container_foto button{
+   
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1em;
+}
+
+.container_foto button:hover{
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.container_foto button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+}

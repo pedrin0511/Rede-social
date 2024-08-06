@@ -4,6 +4,7 @@ import FotoPerfil from "../componentes/elementos/FotoPerfil"
 import {Link} from 'react-router-dom'
 import Publicaçoes from "../componentes/publicaçoes"
 import MeuSeguidores from "../componentes/elementos/Myseguidores"
+import { MdAddCircleOutline } from "react-icons/md";
 function Perfil(){
     const [username ,setUsername] = useState('')
     const [idade ,setidade] = useState('')
@@ -22,7 +23,7 @@ function Perfil(){
 
     useEffect(() => {
         if (id) {
-          fetch(`http://localhost:5000/users`, {
+          fetch(`https://banco-de-dados-six.vercel.app/users`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -60,9 +61,13 @@ function Perfil(){
               <p>Idade: {idade}</p>
               </div>
               <MeuSeguidores/>
+              
             </div>
-            </div>
-            <Link to='/Post'>New Post</Link>
+            <div className={styles.post}>
+              <Link to='/Post'> <MdAddCircleOutline />New Post</Link>
+              </div>
+        </div>
+            <h3>Publicações</h3>
             <Publicaçoes/>
             
         </div>
